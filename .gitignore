@@ -1,0 +1,97 @@
+# Build directories
+build/
+build-*/
+out/
+cmake-build-*/
+tests/build/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Qt generated files
+moc_*.cpp
+moc_*.h
+ui_*.h
+qrc_*.cpp
+*.qrc.cpp
+
+# qmake generated files
+Makefile
+Makefile.Debug
+Makefile.Release
+.qmake.stash
+object_script.*
+
+# Qt Test auto-generated runners
+runner_*.cpp
+
+# Temporary test files
+test_basic.cpp
+test_isolated.cpp
+
+# Debug symbols
+*.pdb
+*.ilk
+
+# Dependency directories
+.qt/
+
+# IDE specific
+.vscode/
+.idea/
+*.user
+*.autosave
+
+# OS generated files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Database files
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Release packages
+release-package-*/
+*.zip
+
+# Demo videos
+演示视频/
+*.mp4
+
+# AI tool config
+.trae/
+
+# Log files
+*.log
+logs/
+
+# Backup files
+*.bak
+*.swp
+*~

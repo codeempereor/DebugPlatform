@@ -1,0 +1,39 @@
+=========================================================
+ DebugPlatform Benchmark Suite (C++11 / Qt 5.14.2)
+ Built: Aug 25 2026 15:02:30
+ Test  Date : 2026-08-25
+ Machine    : Windows x64
+=========================================================
+
+===== Benchmark 1: RingBuffer Write+Read Throughput =====
+  Capacity       : 10000
+  Operations     : 1000000 write + 10000 read = 1010000 total
+  Elapsed        : 11 ms (0.011 s)
+  Throughput     : 91818182 ops/sec   (~91.8M ops/sec)
+  Data points/sec: 90909091 (~90.9M points/sec, write-only single direction)
+  Verify         : written=1000000 read=10000 OK
+
+===== Benchmark 2: Protocol Parse Rate (10000 frames each) =====
+  Modbus RTU   :   2 ms (0.002 s) -> 5,000,000 frames/sec   (parsed 10000/10000 OK)
+  BinaryFrame  :   6 ms (0.006 s) -> 1,666,667 frames/sec   (parsed  9944/10000 OK, 99.44%)
+  Modbus TCP   :   1 ms (0.001 s) -> 10,000,000 frames/sec  (parsed 10000/10000 OK)
+  Total 3proto :   9 ms            -> 3,333,333 frames/sec (combined)
+
+===== Benchmark 3: SQLite Insert + Query =====
+  Single insert : 10000 rows in 486 ms (0.486 s) -> 20,576 rows/sec
+  Batch insert  : 10000 rows in  24 ms (0.024 s) -> 416,667 rows/sec
+  Batch vs Single: 20.2x faster
+  Query         : 1000 queries in 3890 ms -> avg 3.890 ms/query (retrieved 200000 rows)
+
+=========================================================
+ Summary (实测值，用于简历 / README 引用)
+=========================================================
+  RingBuffer 吞吐量      : ~91.8M ops/sec   (1M 写 + 10K 读 / 11ms)
+  协议解析速率 (RTU)     : ~5.0M frames/sec (10K frames / 2ms)
+  协议解析速率 (Bin)     : ~1.67M frames/sec (10K frames / 6ms, 99.44%)
+  协议解析速率 (TCP)     : ~10.0M frames/sec (10K frames / 1ms)
+  协议解析速率 (合计)    : ~3.33M frames/sec (3 x 10K / 9ms)
+  SQLite 单条写入        : ~20.6K rows/sec
+  SQLite 批量写入        : ~416K rows/sec   (20.2x 提速)
+  SQLite 查询平均耗时    : 3.89 ms/query    (命中 200K 行)
+=========================================================
